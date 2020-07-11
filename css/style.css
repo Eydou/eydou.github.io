@@ -52,10 +52,69 @@ header ul li a {
 
 .banner {
     position: relative;
+    background-size: cover;
+}
+
+.background {
+    width: 100%;
+    height: auto;
+}
+
+section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     width: 100%;
     height: 100vh;
-    background-image: url(../asset/back.png);
-    background-size: cover;
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, rgb(48, 47, 47), transparent);
+    z-index: 100000;
+}
+
+section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    mix-blend-mode: color;
+}
+
+#ground {
+    width: 100%;
+    height: auto;
+    padding: 320px 0px;
+    z-index: 2;
+}
+
+#text {
+    position: relative;
+    top: -80px;
+    color: white;
+    font-size: 10em;
+    padding: 320px 0px;
+    z-index: 1;
 }
 
 header.stickys ul li a {
@@ -67,15 +126,15 @@ header.stickys ul li a {
 }
 
 ::-webkit-scrollbar-track {
-    border: 7px solid #b3b3b3;
-    box-shadow: inset 0 0 2.5px 2px rgba(0,0,0.5);
+    opacity: 0%;
 }
 
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(
         45deg,
-        #000000,
-        #ffffff
+        #00063b,
+        #210041
     );
+    opacity: 50%;
     border-radius: 3px;
 }

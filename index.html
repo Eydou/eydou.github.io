@@ -16,8 +16,23 @@
             <li><a href="#">Contactez moi</a></li>
         </ul>
     </header>
-    <section class="banner"></section>
+    <section class="banner">
+        <img src="./asset/space.jpg" alt="space" id="space" class="background">
+        <img src="./asset/moon_ground.png" id ="ground">
+        <h2 id="text" >Edouard Touch</h2>
+    </section>
     <script type="text/javascript">
+    let bg = document.getElementById("space");
+    let ground = document.getElementById("ground");
+    let text = document.getElementById("text");
+
+    window.addEventListener("scroll", function() {
+        var value = window.scrollY;
+
+        bg.style.top = value * 0.5 + 'px';
+        ground.style.top = value * 0.15 + 'px';
+        text.style.top = value * 1 + 'px';
+    })
     window.addEventListener("scroll", function() {
         var header = document.querySelector("header");
         header.classList.toggle("stickys", window.scrollY > 0);
